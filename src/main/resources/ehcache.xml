@@ -1,0 +1,6 @@
+<ehcache name="odesacb"
+         maxElementsInMemory="0"
+         eternal="false"
+         timeToIdleSeconds="1200"
+         timeToLiveSeconds="1200">
+</ehcache>

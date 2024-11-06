@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+
+<hibernate-configuration>
+    <session-factory>
+        <!-- Configuración de conexión a MySQL -->
+        <property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+        <property name="hibernate.connection.url">jdbc:mysql://@db.host@:@db.port@/@db.name@?useSSL=false&amp;serverTimezone=UTC</property>
+        <property name="hibernate.connection.username">@db.username@</property>
+        <property name="hibernate.connection.password">@db.password@</property>
+
+        <!-- Dialecto de MySQL -->
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQL8Dialect</property>
+
+
+        <!-- Configuración del pool de conexiones c3p0 -->
+        <property name="hibernate.c3p0.min_size">10</property>
+        <property name="hibernate.c3p0.max_size">50</property>
+        <property name="hibernate.c3p0.timeout">300</property>
+        <property name="hibernate.c3p0.max_statements">100</property>
+        <property name="hibernate.c3p0.idle_test_period">3000</property>
+        <property name="hibernate.c3p0.acquire_increment">5</property>
+
+        <!-- Generación automática del esquema -->
+        <property name="hibernate.hbm2ddl.auto">update</property>
+
+        <!-- Mostrar SQL en consola -->
+        <property name="hibernate.show_sql">true</property>
+        <property name="hibernate.format_sql">true</property>
+
+        <!-- Configuración de cache con Ehcache -->
+        <!-- Cache configuration -->
+        <property name="hibernate.cache.provider_class">org.hibernate.cache.EhCacheProvider</property>
+        <property name="net.sf.ehcache.configurationResourceName">ehcache.xml</property>
+        <property name="hibernate.cache.use_structured_entries">true</property>
+
+
+        <!-- Configuración adicional -->
+        <property name="hibernate.generate_statistics">false</property>
+        <property name="hibernate.globally_quoted_identifiers">true</property>
+
+        <!-- Mapear clases -->
+        <!-- <mapping class="com.tuempresa.model.TuEntidad"/> -->
+        <mapping class="org.jpos.rest.model.User"/>
+    </session-factory>
+</hibernate-configuration>

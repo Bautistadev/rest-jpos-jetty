@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<logger name="Q2" class="org.jpos.q2.qbean.LoggerAdaptor">
+
+  <log-listener class="org.jpos.util.SimpleLogListener" />
+
+  <log-listener class="org.jpos.rest.logListeners.RotateLogListener">
+    <property name="file" value="q2.log" />
+    <property name="window" value="86400" />
+    <property name="copies" value="60" />
+    <property name="maxsize" value="500000000" />
+  </log-listener>
+
+  <log-listener class="org.jpos.rest.logListeners.LogTagFilter" >
+    <property name="level" value="info" />
+    <property name="DBLevel" value="error" />
+    <property name="lockLevel" value="error" />
+    <property name="lock-timeout" value="10000" />
+    <property name="special-tag" value="get-key" />
+    <property name="special-tag" value="Error-desencriptando-el-pin" />
+    <property name="special-tag" value="iso-exception" />
+    <property name="excluded" value="Respondiendo mensaje sin Tranlog" />
+    <property name="alarm" value="emergency retry" />
+    <property name="space-limit" value="100000" />
+    <property name="tx-timeout" value="1000" />
+  </log-listener>
+
+  <log-listener class="org.jpos.util.ExceptionLogFilter" />
+
+  <log-listener class="org.jpos.rest.logListeners.RotateLogListener">
+    <property name="file" value="exceptions.log" />
+    <property name="window" value="86400" />
+    <property name="copies" value="2" />
+    <property name="maxsize" value="10000000" />
+  </log-listener>
+
+</logger>

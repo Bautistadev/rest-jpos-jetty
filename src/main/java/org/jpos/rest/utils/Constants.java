@@ -1,0 +1,20 @@
+package org.jpos.rest.utils;
+
+public interface Constants {
+
+
+    String TXN_TYPE = "TXN_TYPE";
+    String TXN_REQUEST= "TXN_REQUEST";
+    String SS = "SS";
+    String TXN_RESULT = "TXN_RESULT";
+    String TIMESTAMP = "TIMESTAMP";
+    String ENVIRONMENT_VAR_NODE_NAME = "NODE_NAME";
+    String ENVIRONMENT_VAR_HOSTNAME = "HOSTNAME";
+    String ENVIRONMENT_VAR_COMPUTERNAME = "COMPUTERNAME";
+    String REQUEST_CARD_DIGITIZATION= "REQUEST_CARD_DIGITIZATION";
+    String CHECK_CARD_ELIGIBILITY = "CHECK_CARD_ELIGIBILITY";
+    String SEND_OTP = "SEND_OTP";
+    String RESPONSE= "RESPONSE";
+    String REJECTION_REASON= "REJECTION_REASON";
+
+}
